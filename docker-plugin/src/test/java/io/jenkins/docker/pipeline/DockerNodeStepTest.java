@@ -27,6 +27,7 @@ package io.jenkins.docker.pipeline;
 import org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition;
 import org.jenkinsci.plugins.workflow.job.WorkflowJob;
 import org.jenkinsci.plugins.workflow.job.WorkflowRun;
+import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runners.model.Statement;
@@ -34,7 +35,7 @@ import org.jvnet.hudson.test.BuildWatcher;
 import org.jvnet.hudson.test.RestartableJenkinsRule;
 
 public class DockerNodeStepTest {
-    @Rule
+    @ClassRule
     public static BuildWatcher buildWatcher = new BuildWatcher();
 
     @Rule
