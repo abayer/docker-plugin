@@ -16,7 +16,7 @@
     <name>Docker plugin</name>
     <description>Provide Cloud Provisioning and other Docker features</description>
     <url>http://wiki.jenkins-ci.org/display/JENKINS/Docker+Plugin</url>
-
+    
     <developers>
         <developer>
             <id>ndeloof</id>
@@ -26,8 +26,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.level>7</java.level>
-        <jenkins.version>2.19.3</jenkins.version>
+        <java.level>8</java.level>
+        <jenkins.version>2.73.3</jenkins.version>
     </properties>
 
     <dependencies>
@@ -46,13 +46,13 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>docker-commons</artifactId>
-            <version>1.8</version>
+            <version>1.9</version>
         </dependency>
 
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>ssh-slaves</artifactId>
-            <version>1.6</version>
+            <version>1.22</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>durable-task</artifactId>
-            <version>1.15</version>
+            <version>1.16</version>
         </dependency>
 
         <dependency>
@@ -73,14 +73,37 @@
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-step-api</artifactId>
-            <version>2.13</version>
+            <artifactId>workflow-support</artifactId>
+            <version>2.16</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-durable-task-step</artifactId>
+            <version>2.17</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-support</artifactId>
-            <version>2.14</version>
+            <artifactId>workflow-job</artifactId>
+            <version>2.15</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-cps</artifactId>
+            <version>2.41</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>script-security</artifactId>
+            <version>1.35</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-step-api</artifactId>
+            <version>2.13</version>
             <optional>true</optional>
         </dependency>
 
@@ -109,18 +132,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jenkins-ci.plugins</groupId>
-            <artifactId>script-security</artifactId>
-            <version>1.35</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-cps</artifactId>
-            <version>2.41</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-support</artifactId>
             <version>2.14</version>
@@ -131,18 +142,6 @@
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-basic-steps</artifactId>
             <version>2.6</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-durable-task-step</artifactId>
-            <version>2.16</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.plugins.workflow</groupId>
-            <artifactId>workflow-job</artifactId>
-            <version>2.11.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
