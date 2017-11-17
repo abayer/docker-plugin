@@ -47,11 +47,10 @@ public class DockerNodeStepTest {
             @Override
             public void evaluate() throws Throwable {
                 WorkflowJob j = story.j.jenkins.createProject(WorkflowJob.class, "simpleProvision");
-                j.setDefinition(new CpsFlowDefinition("node {\n" +
-                        "  dockerNode('localhost', 'maven:3-alpine', '/home/jenkins') {\n" +
-                        "    echo 'NODE_NAME: ' + env.NODE_NAME\n" +
-                        "    sh 'mvn -version'\n" +
-                        "  }\n" +
+                j.setDefinition(new CpsFlowDefinition(//"node {\n" +
+                        "  dockerNode(dockerHost: 'unix:///var/run/docker.sock', image: 'jenkins/slave', remoteFs: '/home/jenkins') {\n" +
+                        "    sh 'echo hello'\n" +
+//                        "  }\n" +
                         "}\n", true));
                 WorkflowRun r = story.j.buildAndAssertSuccess(j);
                 story.j.assertLogContains("hi", r);
